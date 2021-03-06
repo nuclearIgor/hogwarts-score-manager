@@ -1,24 +1,28 @@
 import logo from './logo.svg';
 import './App.css';
+import Display from "./components/StudentsTable";
+import DisplayHouseCards from "./components/DisplayHouseCards";
+import Header from "./components/Header";
+import Teste from "./components/StudentsTable/teste";
 
 function App() {
+
   return (
-    <div className="App">
+    <>
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <Header/>
+
       </header>
-    </div>
+        <main className='App-main'>
+            <section className='SectionHouses'>
+                <DisplayHouseCards/>
+            </section>
+            <section className='SectionTable'>
+                <Display/>
+                {/*<Teste/>*/}
+            </section>
+        </main>
+    </>
   );
 }
 

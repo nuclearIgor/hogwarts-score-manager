@@ -1,38 +1,79 @@
-.App {
-  text-align: center;
+body{
+    background-color: #E5E5E5;
+
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App-header{
+    background-color: #6D9FEA;
+    height: 353px;
+    display: flex;
+    align-items: center;
+;
+}
+.App-header h1{
+    padding-left: 30px;
+    color: #FFFFFF;
+    font-size: 48px;
+    font-weight: 500;
+    background-color: #3461A4;
+    height: 158px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.App-header h1 span{
+    margin-left: 30px;
+}
+main{
+    margin: 0 auto;
+    width: 1300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.SectionHouses{
+    width: 1300px;
+    display: flex;
+    justify-content: space-between;
+}
+.HouseCard{
+   background-color: #E5EDF2;
+    width: 298px;
+    text-align: center;
+}
+.SectionTable{
+    margin-top: 30px;
+    background-color: #E5EDF2;
+    width: 100%;
+}
+.SectionTable table{
+    width: 100%;
+}
+.SectionTable table tr{
+    display: flex;
+    justify-content: space-between;
+
+
+    border-bottom: 1px solid #5777A8;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.SectionTable table tr td{
+    /*width: 45%;*/
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.TableIcon{
+    display: flex;
+    align-items: flex-end;
 }
-
-.App-link {
-  color: #61dafb;
+.TableIcon:hover{
+    cursor: pointer;
 }
+.modal{
+    left: 35%;
+    /*margin: 0 auto;*/
+    background-color: beige;
+    width: 400px;
+    height: 400px;
+    z-index: 1;
+    position: absolute;
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
