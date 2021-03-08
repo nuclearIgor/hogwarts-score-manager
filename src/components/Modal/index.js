@@ -143,7 +143,7 @@ export default function TransitionsModal(props) {
         <input className={classes.input}
             placeholder="points"
             pattern="^[0-9]*$"
-            type="text"
+            type="number"
             onChange={(event) =>
                 setPontos(parseInt(event.target.value))
             }
