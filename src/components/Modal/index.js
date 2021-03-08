@@ -1,10 +1,9 @@
 import {addPoints, removePoints} from "../../Store/modules/housepoints/actions";
 import {useDispatch} from "react-redux";
 import {useState} from 'react'
-import {ReactComponent as FormIcon} from '../../assets3/icon.svg'
+import {ReactComponent as FormIcon} from '../../assets/formicon.svg'
 import {makeStyles} from "@material-ui/core";
 import {Modal, Backdrop, Fade} from "@material-ui/core";
-
 
 const useStyles = makeStyles((theme) => ({
     modal: {

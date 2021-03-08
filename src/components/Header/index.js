@@ -1,5 +1,6 @@
-import {ReactComponent as HogwartsIcon} from "../../assets3/hogwarts.svg";
 import {Grid, Paper, makeStyles} from "@material-ui/core";
+
+import hogwartsIcon from '../../assets/hogwarts.svg'
 
 const useStyles = makeStyles((theme) => ({
     header_container: {
@@ -26,7 +27,7 @@ const Header = ()=>{
         <Grid container spacing={0} className={classes.header_container}>
             <Grid item xs={12}>
                 <Paper className={classes.header}>
-                    <HogwartsIcon className={classes.icon}/>
+                    <img src={hogwartsIcon} className={classes.icon}/>
                     <h1>
                         <span>Hogwarts Score Manager</span>
                     </h1>
