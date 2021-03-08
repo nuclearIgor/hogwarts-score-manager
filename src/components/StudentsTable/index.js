@@ -3,13 +3,14 @@ import {useState, useEffect} from 'react'
 import axios from "axios";
 import Modal from "../Modal";
 import {Grid} from "@material-ui/core";
+import TransitionsModal from "../Modal";
 
 const Display = ()=>{
     const [students, setStudents] = useState([])
 
     useEffect(()=>{
        async function fetchData(){
-           const request = await axios.get('http://hp-api.herokuapp.com/api/characters/students')
+           const request = await axios.get('https://hp-api.herokuapp.com/api/characters/students')
            setStudents(request.data)
            return request
         }
@@ -19,43 +20,33 @@ const Display = ()=>{
     return(
         <>
    <Grid container spacing={0}>
+       <div className='table-container'>
        <Grid item xs={12}>
-           <h2>Aunos</h2>
+           <h2 className='alunos'>Alunos</h2>
        </Grid>
        <Grid item xs={12}>
-                <table>
-        <thead>
+<table className='students_table'>
+    <thead className='students_table-head'>
         <tr>
-            <Grid xs={6}>
-                <th>Nome - </th>
-            </Grid>
-            <Grid xs={6}>
-                <th>Casa</th>
-            </Grid>
+            <th>Nome</th>
+            <th>Casa</th>
+            <th></th>
         </tr>
-        </thead>
-                <tbody>
+    </thead>
+    <tbody className='students_table-body'>
             {students.map((student, index)=>
-
-        <tr key={index}>
-            <Grid xs={6}>
-                <td>{student.name}</td>
-            </Grid>
-            <Grid xs={3}>
-                <td>{student.house}</td>
-            </Grid>
-            <Grid xs={3}>
-                <td className='TableIcon' >
-                    <Modal house={student.house} name={student.name} img={student.image} />
-                </td>
-            </Grid>
-
+        <tr className='students_table-row' key={index}>
+            <td className='student-name'>{student.name}</td>
+            <td>{student.house}</td>
+            <td className='TableIcon' >
+                <TransitionsModal house={student.house} name={student.name} img={student.image} />
+            </td>
         </tr>
-
             )}
-        </tbody>
-            </table>
+    </tbody>
+</table>
        </Grid>
+       </div>
    </Grid>
         </>
     )

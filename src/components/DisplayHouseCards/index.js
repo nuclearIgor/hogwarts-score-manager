@@ -1,10 +1,12 @@
 import {useSelector} from "react-redux";
-import {ReactComponent as GryffindorIcon} from '../../assets/gryffindor.svg'
-import {ReactComponent as SlytherinIcon} from '../../assets/slytherin.svg'
-import {ReactComponent as HufflepuffIcon} from '../../assets/hufflepuff.svg'
-import {ReactComponent as RavenclawIcon} from '../../assets/ravenclaw.svg'
+import gryffindorIcon from "../../assets/gryffindor.svg";
+import slytherinIcon from "../../assets/slytherin.svg";
+import hufflepuffIcon from "../../assets/hufflepuff.svg";
+import ravenclawIcon from "../../assets/ravenclaw.svg";
+
 import HouseCard from "../HouseCard";
 import {useEffect, useState} from "react";
+import {Grid} from "@material-ui/core";
 
 const DisplayHouseCards = ()=>{
 
@@ -14,22 +16,22 @@ const DisplayHouseCards = ()=>{
         {
             points: slytherin,
             name: 'Slytherin',
-            icon: <SlytherinIcon/>
+            icon: slytherinIcon
         },
         {
             points: ravenclaw,
             name: 'Ravenclaw',
-            icon: <RavenclawIcon/>
+            icon: ravenclawIcon
         },
         {
             points: gryffindor,
             name: 'Gryffindor',
-            icon: <GryffindorIcon/>
+            icon: gryffindorIcon
         },
         {
             points: hufflepuff,
             name: 'Hufflepuff',
-            icon: <HufflepuffIcon/>
+            icon: hufflepuffIcon
         },]
 
         const [houses, setHouses] = useState(Housearray)
@@ -42,8 +44,10 @@ const DisplayHouseCards = ()=>{
 
     return(
         <>
-            {houses.map((item, index)=>
-            <HouseCard rank={index} name={item.name} icon={item.icon} points={item.points}/>)}
+            <Grid container spacing={2}>
+                {houses.map((item, index)=>
+                    <HouseCard key={index} rank={index} name={item.name} icon={item.icon} points={item.points}/>)}
+            </Grid>
         </>
     )
 }

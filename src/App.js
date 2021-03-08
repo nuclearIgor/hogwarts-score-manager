@@ -3,7 +3,6 @@ import './App.css';
 import Display from "./components/StudentsTable";
 import DisplayHouseCards from "./components/DisplayHouseCards";
 import Header from "./components/Header";
-import Teste from "./components/StudentsTable/teste";
 
 function App() {
 
@@ -19,7 +18,6 @@ function App() {
             </section>
             <section className='SectionTable'>
                 <Display/>
-                {/*<Teste/>*/}
             </section>
         </main>
     </>
