@@ -27,7 +27,7 @@ const Header = ()=>{
         <Grid container spacing={0} className={classes.header_container}>
             <Grid item xs={12}>
                 <Paper className={classes.header}>
-                    <img src={hogwartsIcon} className={classes.icon}/>
+                    <img src={hogwartsIcon} className={classes.icon} alt='logo'/>
                     <h1>
                         <span>Hogwarts Score Manager</span>
                     </h1>

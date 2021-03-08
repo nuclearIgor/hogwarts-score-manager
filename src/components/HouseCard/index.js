@@ -1,4 +1,4 @@
-import {Grid, Paper} from "@material-ui/core";
+import {Grid} from "@material-ui/core";
 
 const HouseCard = (props)=>{
     const {rank, name, icon, points} = props

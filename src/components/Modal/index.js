@@ -22,18 +22,38 @@ const useStyles = makeStyles((theme) => ({
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
+        color:'#3461A4',
         '@media (min-width: 769px)':{
-
             width: '500px',
+            fontSize:'24px',
+        }
+    },
+    right_side:{
+        display:'flex',
+        flexDirection:'column',
+        justifyContent:'center',
+        alignItems:'center',
+        width: '50%',
+        height: '170px',
+        '@media (min-width: 769px)':{
+            height: '300px'
         }
     },
     gain_button:{
         backgroundColor: '#65E1CB',
-        width: '60px'
+        width: '60px',
+        '@media (min-width: 769px)':{
+            width:'100px',
+            height:'25px'
+        }
     },
     lose_button:{
         backgroundColor: '#F8A388',
-        width: '60px'
+        width: '60px',
+        '@media (min-width: 769px)':{
+            width:'100px',
+            height:'25px'
+        }
     },
     done_button:{
         backgroundColor: '#6994D4',
@@ -42,12 +62,17 @@ const useStyles = makeStyles((theme) => ({
     },
     input:{
         marginBottom:'5px',
-        width: '80px'
+        width: '80px',
+        '@media (min-width: 769px)':{
+            width:'200px',
+            height:'25px'
+        }
     },
     buttons:{
         display:'flex',
-        flexDirection: 'column',
+        flexDirection: 'row',
         alignItems: 'center',
+        justifyContent:'space-between',
     },
     done_div:{
         textAlign:'center',
@@ -78,7 +103,7 @@ export default function TransitionsModal(props) {
     const [add, setAdd] = useState(false)
 
     const dispatch = useDispatch();
-    const { name, img, icon, house } = props;
+    const { name, img, house } = props;
 
     const handleOpen = () => {
         setOpen(true);
@@ -107,14 +132,14 @@ export default function TransitionsModal(props) {
        <div className={classes.paper}>
         <>
             <div>
-                <img src={`${img}`} className={classes.modal_image}/>
+                <img alt='' src={`${img}`} className={classes.modal_image}/>
             </div>
-            <div>
+            <div className={classes.right_side}>
                 <h5>{house}</h5>
                 <h5>{name}</h5>
 
     {!done && (
-    <div className={classes.buttons}>
+    <div>
         <input className={classes.input}
             placeholder="points"
             pattern="^[0-9]*$"
@@ -123,6 +148,7 @@ export default function TransitionsModal(props) {
                 setPontos(parseInt(event.target.value))
             }
         />
+        <div className={classes.buttons}>
         <button className={classes.gain_button}
             onClick={() => {
                 dispatch(addPoints(pontos, `${house}`));
@@ -137,6 +163,7 @@ export default function TransitionsModal(props) {
                 setAdd(false);
             }}
         >  Lose  </button>
+        </div>
     </div>
     )}
 
