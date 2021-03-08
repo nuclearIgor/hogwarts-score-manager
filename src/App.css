@@ -47,6 +47,9 @@ body {
 td{
     display: inline-block;
 }
+.TableIcon:hover{
+    cursor: pointer;
+}
 @media (min-width: 769px){
     .house_icon{
         width: 150px;
@@ -64,9 +67,6 @@ td{
     }
     .student-name{
         width: 50%;
-    }
-    .TableIcon{
-        /*width: 25%;*/
     }
 }
 
